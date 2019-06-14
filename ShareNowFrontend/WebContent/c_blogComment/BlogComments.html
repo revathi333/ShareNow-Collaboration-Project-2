@@ -1,0 +1,58 @@
+<div  class="container" ng-controller="blogCommentController">
+
+<br/><br/>
+
+<div class="container" align="center">
+<b>{{Blog.blogName}}</b> <br/>
+<i><small>Posted by <b>{{Blog.username}}</b>
+On {{Blog.createDate}}<br/></small></i>
+{{Blog.blogContent}}<br/>
+<hr/>
+<form>
+Add Comment:
+<input type="text" placeholder="" cols="50" ng-model="BlogComment.commentText" />
+<input type="button" value="Add Comment"  ng-click="addBlogComment(Blog.blogId)"/>
+</form>
+<hr/>
+
+<div class="container">
+<table align="center">
+<tr colspan="3">Comments</tr>
+
+<tr ng-repeat="comment in CommentsList">
+<td>{{comment.commentText}} </td>
+<td><i><small>{{comment.commentedDate}} by <b>{{comment.username}}</b></small></i></td>
+<td ng-show="comment.username==currentUser.username"> 
+<button type="button" class="btn btn-default btn-sm" ng-click="deleteBlogComment(comment.blogCommentId)">
+          <span class="glyphicon glyphicon-trash"></span> Delete Your Comment 
+</button>
+
+<button ng-show="editComment.blogCommentId==0" type="button" class="btn btn-default btn-sm" ng-click="editBlogComment(comment.blogCommentId)">
+          <span class="glyphicon glyphicon-trash"></span>Edit Your Comment 
+</button>
+</td>
+</tr>
+
+</table>
+</div>
+<hr/>
+</div>
+
+<div ng-hide="editComment.blogCommentId==0">
+<form>
+Edit Comment:
+<input type="text"  cols="50" placeholder="" ng-model="editComment.commentText" />
+<input type="button" value="Save"  ng-click="updateBlogComment()"/>
+</form>
+</div>
+
+
+</div>
+
+
+          
+
+        
+
+
+

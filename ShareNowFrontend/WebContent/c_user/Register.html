@@ -1,0 +1,43 @@
+<div id="page">
+<div  class="container" ng-controller="userController">
+<h1 class="form-heading">login Form</h1>
+<div class="login-form">
+<div class="main-div">
+    <div class="panel">
+   <h2>Register Now</h2><br/>
+   </div>
+    <form id="Login">
+
+        <div class="form-group">
+
+
+            <input type="text" class="form-control" id="inputUsername" placeholder="User Name" ng-model="user.username" required/>
+
+        </div>
+
+        <div class="form-group">
+
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="user.password"  required/>
+
+        </div>
+        
+        <div class="form-group">
+
+            <input type="text" class="form-control" id="inputMemberName" placeholder="Member Name" ng-model="user.memberName" required/>
+
+        </div>
+        
+        <div class="form-group">
+
+            <input type="text" class="form-control" id="inputEmail" placeholder="Enter your email" ng-model="user.emailId" required/>
+
+        </div>
+        
+        <button type="submit" class="btn btn-primary" value="Sign Up" ng-click="register()" >Sign Up</button>
+
+    </form>
+    </div>
+
+</div></div>
+</div>
+

@@ -1,0 +1,59 @@
+<div  class="container" ng-controller="blogController">
+
+<form>
+<table align="center">
+<tr colspan="2">Add Blog</tr>
+
+<tr>
+<td>Blog Name </td>
+<td><textarea cols="50" placeholder="" ng-model="blog.blogName"></textarea></td>
+</tr>
+
+<tr>
+<td>Blog Content </td>
+<td><textarea rows="4" cols="50" placeholder="" ng-model="blog.blogContent"></textarea></td>
+</tr>
+
+<tr>
+<td><input type="button" value="Post" ng-click="addBlog()"/></td>
+</tr>
+</table>
+</form>
+<br/><br/>
+
+<h2 align="center">Your Blogs</h2>
+
+<div class="container"  ng-repeat="blog in LoggedUserBlogs">
+<b>{{blog.blogName}}</b> <br/>
+<i><small>Posted by {{blog.username}}
+On {{blog.createDate}}<br/></small></i>
+{{blog.blogContent}}
+
+<button type="button" class="btn btn-default btn-sm" ng-click="LikeBlog(blog.blogId)">
+          <span class="glyphicon glyphicon-thumbs-down"></span> Like 
+</button>
+{{blog.likes}}
+
+<button type="button" class="btn btn-default btn-sm" ng-click="DisLikeBlog(blog.blogId)">
+          <span class="glyphicon glyphicon-thumbs-down"></span> Dislike 
+</button>
+{{blog.dislikes}}
+
+<button type="button" class="btn btn-default btn-sm" ng-click="BlogComment(blog.blogId)">
+          <span class="glyphicon glyphicon-thumbs-down"></span> Comments 
+</button>
+
+<div align="right"> 
+<button  type="button" class="btn btn-default btn-sm" ng-click="deleteBlog(blog.blogId)">
+          <span class="glyphicon glyphicon-trash"></span> Delete Blog 
+</button></div>
+
+<hr/>
+</div>
+</div>
+
+
+          
+
+
+

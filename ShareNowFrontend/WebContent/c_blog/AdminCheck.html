@@ -1,0 +1,17 @@
+<div class="container" ng-controller="blogController">
+
+<h2 align="center">Latest Blogs</h2>
+
+<div class="container" >
+<table class="table table-striped">
+<tr  ng-repeat="blog in AdminCheckBlogs">
+<td>{{blog.blogName}}</td>
+<td>{{blog.blogContent}}</td>
+<td ng-hide="blog.status=='A'"><button type="button" class="btn btn-success" ng-click="approveBlog(blog.blogId)">Approve</button></td>
+<td ng-hide="blog.status=='NA'"><button type="button" class="btn btn-warning" ng-click="rejectBlog(blog.blogId)">Reject</button></td>
+</tr>
+</table>
+
+</div>
+
+</div>

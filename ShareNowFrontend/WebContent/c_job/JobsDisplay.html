@@ -1,0 +1,27 @@
+<div class="container" ng-controller="jobController">
+
+<h2 align="center">Latest Jobs</h2>
+
+<div class="container"  ng-repeat="Job in JobsList">
+
+<b>{{Job.designation}}</b><br/>
+<small><i>Posted by</i></small><b> {{Job.companyName}}</b><br/>
+Skills required : {{Job.requiredSkills}}<br/>
+CTC : {{Job.ctc}}<br/>
+Job Description : {{Job.jobDesc}}<br/>
+<i><small>apply by : {{Job.lastDatetoApply}}<br/></small></i></tr>
+<button type="button" ng-show="currentUser.role=='ROLE_ADMIN'" class="btn btn-warning" ng-click="deleteJob(Job.jobId)">Delete Job</button>
+<hr>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

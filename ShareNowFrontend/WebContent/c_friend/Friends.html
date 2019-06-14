@@ -1,0 +1,58 @@
+<div  class="container" ng-controller="friendController">
+
+<div ng-show="showAllFriends!=null" >
+<h3 align="center">Your Friends</h3>
+<div class="container"  ng-repeat="friend in showAllFriends">
+<b ng-hide="friend.username==currentUser.username">{{friend.username}}</b> <br/>
+<b ng-hide="friend.friendusername==currentUser.username">{{friend.friendusername}}</b> <br/>
+
+<button type="button" class="btn btn-warning" ng-click="Unfriend(friend.friendId)">
+          <span class="glyphicon glyphicon-thumbs-down"></span> Unfriend 
+</button>
+<hr>
+</div>
+</div>
+
+
+<div ng-show="sentPendingFriendRequests!=null" >
+<h3 align="center" >Following</h3>
+<div class="container"  ng-repeat="friend in sentPendingFriendRequests">
+<b>{{friend.friendusername}}</b> <br/>
+
+<button type="button" class="btn btn-warning" ng-click="Unfriend(friend.friendId)">
+          <span class="glyphicon glyphicon-thumbs-down"></span> Delete sent Request 
+</button>
+</div>
+<hr>
+</div>
+
+<div ng-show="showReceivedPendingRequests!=null" >
+<h3 align="center">Follower</h3>
+<div class="container"  ng-repeat="friend in showReceivedPendingRequests">
+<b>{{friend.username}}</b> <br/>
+
+<button type="button" class="btn btn-success" ng-click="approveFriendRequest(friend.friendId)">
+          <span class="glyphicon glyphicon-thumbs-down"></span> Accept Request 
+</button>
+
+<button type="button" class="btn btn-warning" ng-click="rejectFriendRequest(friend.friendId)">
+          <span class="glyphicon glyphicon-thumbs-down"></span> Reject Request 
+</button>
+</div>
+<hr>
+</div>
+
+<div ng-show="showSuggestedFriends!=null" >
+<h3 align="center">People you may Know</h3>
+<div class="container"  ng-repeat="friend in showSuggestedFriends">
+<b>{{friend.memberName}}</b> <br/>
+<b>{{friend.username}}</b> <br/>
+
+<button type="button" class="btn btn-success" ng-click="sendFriendRequest(friend.username)">
+          <span class="glyphicon glyphicon-thumbs-down"></span> Add Friend 
+</button>
+</div>
+</div>
+
+
+</div>

@@ -1,0 +1,20 @@
+<div class="container" ng-controller="blogController">
+
+<h2 align="center">Latest Blogs</h2>
+
+<div class="container"  ng-repeat="blog in blogData">
+<b>{{blog.blogName}}</b> <br/>
+<i><small>Posted by {{blog.username}}
+On {{blog.createDate}}<br/></small></i>
+{{blog.blogContent}}
+
+<hr/>
+</div>
+
+</div>
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+<div class="container" ng-controller="userHomeController">
+
+<h2 align="center">Latest Blogs</h2>
+
+<div class="container"  ng-repeat="blog in blogs">
+<b>{{blog.blogName}}</b> <br/>
+<i><small>Posted by <b>{{blog.username}}</b>
+On {{blog.createDate}}<br/></small></i>
+{{blog.blogContent}}
+
+
+<button type="button" class="btn btn-default btn-sm" ng-click="LikePublicBlog(blog.blogId)" >
+          <span class="glyphicon glyphicon-thumbs-up"></span> Like  
+</button>
+{{blog.likes}}
+
+<button type="button" class="btn btn-default btn-sm" ng-click="DisLikePublicBlog(blog.blogId)">
+          <span class="glyphicon glyphicon-thumbs-down"></span> Dislike 
+</button>
+{{blog.dislikes}}
+
+<button type="button" class="btn btn-default btn-sm" ng-click="BlogComment(blog.blogId)">
+          <span class="glyphicon glyphicon-thumbs-down"></span> Comments 
+</button>
+
+<div align="right" ng-show="blog.username==currentUser.username"> 
+<button type="button" class="btn btn-default btn-sm" ng-click="deleteBlog(blog.blogId)">
+          <span class="glyphicon glyphicon-trash"></span> Delete Blog 
+</button></div>
+
+<hr/>
+</div>
+
+</div>
+

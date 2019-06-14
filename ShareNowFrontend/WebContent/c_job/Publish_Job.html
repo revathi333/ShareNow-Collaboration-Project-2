@@ -1,0 +1,58 @@
+  
+  <div class="container" ng-controller="jobController">
+  
+    <form id="Login">
+
+        <div class="form-group">
+
+
+        Designation : <input type="text" class="form-control" id="inputUsername" placeholder="" ng-model="Job.designation" required/>
+
+        </div>
+         <div class="form-group">
+
+
+         Description : <input type="text" class="form-control" id="inputUsername" placeholder="" ng-model="Job.jobDesc" required/>
+
+        </div>
+        
+         <div class="form-group">
+
+
+        Company Name : <input type="text" class="form-control" id="inputUsername" placeholder="" ng-model="Job.companyName" required/>
+
+        </div>
+        
+         <div class="form-group">
+
+         Skills required : <input type="text" class="form-control" id="inputPassword" placeholder="" ng-model="Job.requiredSkills"  required/>
+
+        </div>
+        
+         <div class="form-group">
+
+
+          CTC : <input type="text" class="form-control" id="inputUsername" placeholder="" ng-model="Job.ctc" required/>
+
+        </div>
+        
+         <div class="form-group">
+
+
+          Posting Location : <input type="text" class="form-control" id="inputUsername" placeholder="" ng-model="Job.jobLocation" required/>
+
+        </div>
+        
+
+        <div class="form-group">
+
+         Apply by : <input type="date" class="form-control" id="inputPassword" placeholder="" ng-model="Job.lastDatetoApply"  required/>
+
+        </div>
+        
+        <button type="submit" class="btn btn-primary" ng-click="addJob()">Publish Job</button>
+
+    </form>
+    </div>
+    
+    
